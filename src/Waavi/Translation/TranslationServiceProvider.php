@@ -52,6 +52,8 @@ class TranslationServiceProvider extends LaravelTranslationServiceProvider {
 
 			$trans = new Translator($loader, $locale);
 
+			$trans->setFallback($app['config']['app.fallback_locale']);
+
 			return $trans;
 		});
 	}
